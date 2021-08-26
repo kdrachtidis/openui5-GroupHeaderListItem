@@ -6,7 +6,31 @@
   <Page class="sapUiContentPadding"
     title="Home">
     <content>
-      <!-- Place content here-->
+
+      <List id="idList"
+        items="{
+			path: '/ProductCollection',
+			sorter: {
+				path: 'SupplierName',
+				descending: false,
+				group: true
+			},
+			groupHeaderFactory: '.getGroupHeader'
+		}">
+        <headerToolbar>
+          <OverflowToolbar>
+            <Title text="Products" />
+            <ToolbarSpacer />
+
+          </OverflowToolbar>
+        </headerToolbar>
+        <StandardListItem title="{Name}"
+          description="{ProductId}"
+          icon="{ProductPicUrl}"
+          iconDensityAware="false"
+          iconInset="false" />
+      </List>
+
     </content>
   </Page>
 </mvc:View>
